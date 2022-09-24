@@ -1,0 +1,139 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.dim{
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .3);
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    background-color: #474343;
+    color: #fafafa;
+}
+/* form styles */
+
+.addBookForm{
+    display: none;
+    border: 5px solid rgb(71, 67, 67);
+    padding: 20px;
+    width: fit-content;
+    border-radius: 10px;
+    z-index: 9;
+}
+.form-content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.btns{
+    display: flex;
+    /* flex-direction: column; */
+    gap: 10px;
+}
+
+.form-content input{
+    outline: 0;
+    appearance: none;
+    /* border: #ccc 1px solid; */
+    border-width: 0 0 1px;
+    /* border-radius: 3px; */
+    margin: 10px 5px;
+}
+.form-content input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: 2px solid gray;
+    vertical-align: -13px;
+    outline: none;
+}
+.form-content input[type="checkbox"]::before{
+    display: block;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 6px;
+    background-color: green;
+    font-size: 1.2rem;
+    transform: translate(3px, 3px) scale(0);
+    transform-origin: center;
+    transition: all 0.3s ease-in;
+}
+.form-content input[type="checkbox"]:checked:before{
+    transform: translate(3px, 3px) scale(1);
+    transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2);
+}
+.form-content label{
+    font-weight: 700;
+}
+
+.form-content input:focus{
+    outline: 0;
+    /* border-color: #0f0; */
+    box-shadow: 0rem 3px 2px -2px #0f0;
+}
+
+.form-content input:invalid:not(:focus):not(:placeholder-shown){
+    border: 1px solid red;
+}
+
+.addBook{
+    outline: 0;
+    width: 150px;
+    height: 30px;
+    border: 2px solid rgb(71, 67, 67);
+    border-radius: 10px;
+    background-color: #fff;
+    font-weight: 700;
+    transition: background-color 0.3s, color 0.3s ;
+}
+.addBook:hover{
+    cursor: pointer;
+    background-color: rgb(71, 67, 67);
+    color: #fff;
+}
+
+.close{
+    outline: 0;
+    width: 150px;
+    height: 30px;
+    border: 2px solid red;
+    border-radius: 10px;
+    background-color: #fff;
+    font-weight: 700;
+    transition: background-color 0.3s, color 0.3s ;
+}
+.close:hover{
+    cursor: pointer;
+    background-color: red;
+    color: #fff;
+}
+
+/* add new book to library button */
+.addNewBook img{
+    transform: rotate(0);
+    transition: transform 0.5s;
+}
+.addNewBook img:hover{
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+.addNewBook img+span{
+    position: relative;
+    width: max-content;
+}
+.addNewBook img:hover+span::after{
+    content: 'Add a New Book!';
+    width: max-content;
+    position: absolute;
+    top: -100%;
+}
