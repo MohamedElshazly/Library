@@ -1,3 +1,9 @@
+:root{
+    --primary: #474747;
+    --secondary: #fafafa;
+    --minimal: #5e5a59;
+}
+
 *{
     box-sizing: border-box;
     padding: 0;
@@ -6,16 +12,104 @@
 .dim{
     box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .3);
 }
+/* layout styles */
 
 .content{
+    display: grid;
+    grid-template-rows: 1fr 9fr 1fr;
+    /* height: fit-content; */
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-column: 1 / span 1;
+    padding: 0 10px;
+    border-bottom: 3px solid var(--minimal);
+    /* height: fit-content; */
+    /* border: 1px solid var(--minimal); */
+}
+.links ul{
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    padding: 0 20px;
+    list-style-type: none;
+    font-size: 20px;
+}
+.links .signupBtn{
+    border: 1px solid var(--minimal);
+    border-radius: 7px;
+    background-color: var(--minimal);
+    width: 150px;
+    height: 35px;
+    text-align: center;
+    transition: background-color 0.2s, color 0.2s;
+    padding: 3px 0 0 0;
+}
+.links .signupBtn:hover{
+    cursor: pointer;
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+.links .signinBtn{
+    border: 1px solid var(--minimal);
+    border-radius: 7px;
+    width: 150px;
+    height: 35px;
+    text-align: center;
+    transition: background-color 0.2s, color 0.2s;
+    padding: 3px 0 0 0;
+}
+.links .signinBtn:hover{
+    cursor: pointer;
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+.main{
+    /* grid-column: 1 / span 1; */
+    grid-row: 2 / span 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-    height: 100vh;
-    background-color: #474343;
-    color: #fafafa;
+    /* flex: 1; */
 }
+
+.footer{
+    grid-column: 1 / span 1;
+    background-color: var(--minimal);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    padding: 10px;
+    /* height: max-content; */
+}
+.footer .socials{
+    display: flex;
+    gap: 20px;
+}
+.footer .socials p i{
+    color: #f00;
+}
+.footer .socials ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    list-style-type: none;
+    font-size: 20px;
+}
+.footer a {
+    color: #fff;
+}
+
+
 /* form styles */
 
 .addBookForm{
@@ -116,6 +210,24 @@
     cursor: pointer;
     background-color: red;
     color: #fff;
+}
+/* book cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    height: min-content;
+    padding: 20px;
+    /* height: 100%; */
+}
+.card{
+    border: 1px solid var(--minimal);
+    background-color: var(--secondary);
+    height: 400px;
+    margin: 20px;
+    /* flex: 1; */
 }
 
 /* add new book to library button */
