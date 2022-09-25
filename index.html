@@ -14,16 +14,16 @@
 <body>
     <div class="content">
         <div class="header">
-            <h1>Welcome to the Library!</h1>
+            <h1 class="font-black">Welcome to the Library!</h1>
             <div class="links">
                 <ul>
-                    <li class="signupBtn">Join us!</li>
-                    <li class="signinBtn">Sign In</li>
+                    <li class="signupBtn font-bold">Join us!</li>
+                    <li class="signinBtn font-bold">Sign In</li>
                 </ul>
             </div>
         </div>
         <div class="main">
-            <div class="newBtn" onclick="openForm()">
+            <div class="newBtn font-bold" onclick="openForm()">
                 Add a new Book
             </div>
             <div class="cards">
@@ -31,38 +31,38 @@
             </div>
             <div class="addNewBook" onclick="openForm()">
                 <img src="plus-circle-outline2.png" alt="">
-                <span></span>
+                <span class="font-bold"></span>
             </div>
             <div class="popup">
                 <form action="#" class="addBookForm">
                     <fieldset>
-                        <legend>Add new Book!</legend>
+                        <legend class="font-normal">Add new Book!</legend>
                         <div class="form-content">
                             <div class="fields">
                                 <p>
-                                    <label for="title">Title:</label>
+                                    <label class="font-normal" for="title">Title:</label>
                                     <input type="text" name="title" id="title" placeholder=" " required>
-                                    <span></span>
+                                    <span class="font-normal"></span>
                                 </p>
                                 <p>
-                                    <label for="author">Author Name:</label>
+                                    <label class="font-normal" for="author">Author Name:</label>
                                     <input type="text" name="author" id="author" placeholder=" " required>
-                                    <span></span>
+                                    <span class="font-normal"></span>
                                 </p>
                                 <p>
-                                    <label for="num">Number of Pages:</label>
+                                    <label class="font-normal" for="num">Number of Pages:</label>
                                     <input type="number" name="num" id="num" placeholder=" " required>
-                                    <span></span>
+                                    <span class="font-normal"></span>
                                 </p>
                                 <p>
                                     <input type="checkbox" name="read" id="read" placeholder=" ">
-                                    <label for="read">Read?</label>
+                                    <label class="font-normal" for="read">Read?</label>
                                 </p>
                             </div>
                             
                             <div class="btns">
-                                <button class="addBook">Add Book!</button>
-                                <button type="button" class="close" onclick="closeForm()">Close</button>
+                                <button class="addBook font-normal">Add Book!</button>
+                                <button type="button" class="close font-normal" onclick="closeForm()">Close</button>
                             </div>
                         </div>
                     </fieldset>   

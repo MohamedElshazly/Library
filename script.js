@@ -59,14 +59,17 @@ const createAndAppendCard = (title, author, numPages, read, id) => {
     //populate card content
     const h3 = document.createElement('h3');
     h3.textContent = title;
+    h3.classList.add("font-black");
     cardContent.appendChild(h3);
 
     const h4 = document.createElement('h4');
     h4.textContent = `by ${author}`;
+    h4.classList.add("font-bold");
     cardContent.appendChild(h4);
 
     const p1 = document.createElement('p');
     p1.textContent = `${numPages} pages`;
+    p1.classList.add("font-normal");
     cardContent.appendChild(p1);
 
     const p2 = document.createElement('p');
@@ -80,6 +83,7 @@ const createAndAppendCard = (title, author, numPages, read, id) => {
 
     const checkboxLabel = document.createElement('label');
     checkboxLabel.textContent = 'Read?';
+    checkboxLabel.classList.add("font-normal");
     checkboxLabel.setAttribute("for", "card-read");
 
     p2.appendChild(checkbox);
@@ -93,6 +97,7 @@ const createAndAppendCard = (title, author, numPages, read, id) => {
     //create delete button 
     const delButton = document.createElement('button');
     delButton.classList.add('alert');
+    delButton.classList.add('font-bold');
     delButton.textContent = 'Delete Book';
 
     card.appendChild(delButton);
