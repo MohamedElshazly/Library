@@ -280,20 +280,70 @@
     gap: 10px;
     width: 100%;
     height: min-content;
-    padding: 20px;
-    
-    /* height: 100%; */
+    padding: 20px;    
 }
 .card{
-    border: 1px solid var(--minimal);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    border: 5px double var(--minimal);
     background-color: var(--secondary);
     height: 400px;
+    max-width: 300px;
     margin: 20px;
-    
-    /* flex: 1; */
+    box-shadow: 8px 8px 6px -6px var(--secondary), inset 2px 0px 20px var(--minimal);
+    color: var(--primary);
+
+}
+.card .card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex: 1;
+}
+.card .alert{
+    border: 1px solid var(--minimal) ;
+    /* background-color: #f00; */
+    border-radius: 5px;
+    color: var(--primary);
+    height: 30px;
+    width: 90%;
+    margin: 15px 0;
+    transition: background-color 0.2s, color 0.2s;
+}
+.card .alert:hover{
+    cursor: pointer;
+    background-color: #f00;
+    color: var(--secondary);
 }
 
 /* add new book to library button */
+ .main .newBtn{
+    align-self: flex-start;
+    text-align: center;
+    margin: 20px 0 0 40px;
+    padding: 12px 0 0 0;
+    border: 2px solid var(--minimal);
+    color: var(--secondary);
+    height: 50px;
+    width: 200px;
+    font-size: 20px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.main .newBtn:hover{
+    cursor: pointer;
+    background-color: var(--secondary);
+    color: var(--minimal);
+}
+
+.addNewBook{
+    margin: 20px 0;
+}
 .addNewBook img{
     transform: rotate(0);
     transition: transform 0.5s;
