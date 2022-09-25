@@ -111,37 +111,108 @@
 
 
 /* form styles */
+.popup{
+    position: relative;
+}
 
 .addBookForm{
     display: none;
     border: 5px solid rgb(71, 67, 67);
+    background-color: var(--secondary);
     padding: 20px;
-    width: fit-content;
     border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 9;
+}
+.addBookForm fieldset { 
+    padding: 15px 30px ;
+}
+.addBookForm legend {
+    color: white;
+    background: var(--minimal);
+    padding: 5px 10px;
 }
 .form-content{
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    justify-content: flex-start;
+    height: 400px;
+    width: max-content;
 }
+.form-content .fields{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    justify-content: flex-start;
+    flex: 1;
+}
+
 .btns{
     display: flex;
-    /* flex-direction: column; */
     gap: 10px;
 }
 
+.form-content label{
+    color: var(--minimal);
+    display: block;
+}
+.form-content label[for="read"] {
+    display: inline;
+}
 .form-content input{
+    box-shadow: inset 1px 1px 3px #ccc;
     outline: 0;
     appearance: none;
-    /* border: #ccc 1px solid; */
-    border-width: 0 0 1px;
-    /* border-radius: 3px; */
     margin: 10px 5px;
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
 }
+
+.form-content input[type="text"],
+.form-content input[type="number"]
+{  
+    padding: 5px;
+}
+
+.form-content input:hover,
+.form-content input:focus{
+    background-color: #eee;
+}
+
+.form-content input + span{
+    position: relative;
+}
+.form-content input:required+span::before{
+    content: 'required';
+    background-color: var(--minimal);
+    color: var(--secondary);
+    padding: 5px 15px;
+    font-size: 10px;
+    position: absolute;
+    top: -65px;
+    left: 240px;
+}
+.form-content input + span::after{
+    position: absolute;
+    top: -35px;
+    left: 320px;
+}
+.form-content input:invalid{
+    border: 2px solid red;
+}
+.form-content input:invalid + span::after{
+    content: '✖';
+    color: #f00;
+}
+.form-content input:valid + span::after{
+    content: '✓';
+    color: #0f0;
+}
+
 .form-content input[type="checkbox"]{
     width: 20px;
     height: 20px;
@@ -168,16 +239,6 @@
 }
 .form-content label{
     font-weight: 700;
-}
-
-.form-content input:focus{
-    outline: 0;
-    /* border-color: #0f0; */
-    box-shadow: 0rem 3px 2px -2px #0f0;
-}
-
-.form-content input:invalid:not(:focus):not(:placeholder-shown){
-    border: 1px solid red;
 }
 
 .addBook{
@@ -220,6 +281,7 @@
     width: 100%;
     height: min-content;
     padding: 20px;
+    
     /* height: 100%; */
 }
 .card{
@@ -227,6 +289,7 @@
     background-color: var(--secondary);
     height: 400px;
     margin: 20px;
+    
     /* flex: 1; */
 }
 

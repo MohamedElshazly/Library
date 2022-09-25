@@ -23,30 +23,8 @@
             </div>
         </div>
         <div class="main">
-            <form action="#" class="addBookForm">
-                <div class="form-content">
-                    <p>
-                        <label for="title">Title:</label>
-                        <input type="text" name="title" id="title" placeholder=" " required>
-                    </p>
-                    <p>
-                        <label for="author">Author Name:</label>
-                        <input type="text" name="author" id="author" placeholder=" " required>
-                    </p>
-                    <p>
-                        <label for="num">Number of pages:</label>
-                        <input type="number" name="num" id="num" placeholder=" " required>
-                    </p>
-                    <p>
-                        <input type="checkbox" name="read" id="read" placeholder=" ">
-                        <label for="read">Read?</label>
-                    </p>
-                    <div class="btns">
-                        <button class="addBook">Add Book!</button>
-                        <button type="button" class="close" onclick="closeForm()">Close</button>
-                    </div>
-                </div>
-            </form>
+
+
             <div class="cards">
                 <div class="card"></div>
                 <div class="card"></div>
@@ -60,8 +38,43 @@
                 <img src="plus-circle-outline2.png" alt="">
                 <span></span>
             </div>
+            <div class="popup">
+                <form action="#" class="addBookForm">
+                    <fieldset>
+                        <legend>Add new Book!</legend>
+                        <div class="form-content">
+                            <div class="fields">
+                                <p>
+                                    <label for="title">Title:</label>
+                                    <input type="text" name="title" id="title" placeholder=" " required>
+                                    <span></span>
+                                </p>
+                                <p>
+                                    <label for="author">Author Name:</label>
+                                    <input type="text" name="author" id="author" placeholder=" " required>
+                                    <span></span>
+                                </p>
+                                <p>
+                                    <label for="num">Number of Pages:</label>
+                                    <input type="number" name="num" id="num" placeholder=" " required>
+                                    <span></span>
+                                </p>
+                                <p>
+                                    <input type="checkbox" name="read" id="read" placeholder=" ">
+                                    <label for="read">Read?</label>
+                                </p>
+                            </div>
+                            
+                            <div class="btns">
+                                <button class="addBook">Add Book!</button>
+                                <button type="button" class="close" onclick="closeForm()">Close</button>
+                            </div>
+                        </div>
+                    </fieldset>   
+                </form>
+            </div>
         </div>
-        
+
         <div class="footer">
             <p>
                 @The Odin Project
